@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicha B&M — Chicha artesanal de Trinidad, Beni</title>
+<meta name="description" content="Chicha artesanal de maíz, maní, arroz, trigo y chivé, hecha a mano en Trinidad, Beni. Pedidos por WhatsApp al +591 67353140.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:            #F3E7C6;
+    --bg-card:       #FBF4DE;
+    --clay:          #7C3B18;
+    --clay-deep:     #3F2010;
+    --clay-darker:   #2A150B;
+    --gold:          #D9A62E;
+    --gold-soft:     #EFC96B;
+    --green:         #364F27;
+    --river:         #33625F;
+    --ink:           #2A1B10;
+    --ink-soft:      #5C4632;
+    --line:          rgba(42,21,11,0.14);
+    --paper:         #FBF4DE;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Karla', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --maxw: 1180px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3,p{ margin:0; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--river);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- textura de grano (divisor) ---------- */
+  .grain-rule{
+    height:14px;
+    width:100%;
+    background-image: radial-gradient(circle, var(--clay) 2px, transparent 2.4px);
+    background-size: 22px 14px;
+    background-position: center;
+    opacity:0.55;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(243,231,198,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--maxw);
+    margin:0 auto;
+    gap:20px;
+  }
+  .logo{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.5rem;
+    letter-spacing:0.01em;
+    text-decoration:none;
+    color:var(--clay-deep);
+  }
+  .logo em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--river);
+    font-size:1rem;
+  }
+  .nav-links{
+    display:flex;
+    gap:30px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; right:100%;
+    bottom:0;
+    height:2px;
+    background:var(--gold);
+    transition:right .25s ease;
+  }
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after{ right:0; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:0.92rem;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:999px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--green);
+    color:var(--paper);
+  }
+  .btn-primary:hover{ background:#2a3d1d; }
+  .btn-outline{
+    background:transparent;
+    border-color:var(--clay-deep);
+    color:var(--clay-deep);
+  }
+  .btn-outline:hover{ background:var(--clay-deep); color:var(--paper); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--clay-deep);
+    padding:0;
+    text-decoration:underline;
+    text-underline-offset:4px;
+  }
+
+  .btn-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px; height:38px;
+    border-radius:50%;
+    border:1.5px solid var(--clay-deep);
+    color:var(--clay-deep);
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .btn-icon:hover{ background:var(--clay-deep); color:var(--paper); }
+
+  .nav-cta{ display:flex; align-items:center; gap:14px; }
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:1.5px solid var(--clay-deep);
+    border-radius:8px;
+    width:42px; height:38px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .nav-toggle span,
+  .nav-toggle span::before,
+  .nav-toggle span::after{
+    content:"";
+    display:block;
+    width:20px; height:2px;
+    background:var(--clay-deep);
+    position:relative;
+    transition:transform .2s ease;
+  }
+  .nav-toggle span::before{ position:absolute; top:-6px; }
+  .nav-toggle span::after{ position:absolute; top:6px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background: linear-gradient(180deg, var(--bg) 0%, #EDDCAE 100%);
+    padding:64px 0 40px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--river);
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1.5px;
+    background:var(--river);
+    display:inline-block;
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.5rem, 5vw, 4rem);
+    line-height:1.04;
+    color:var(--clay-darker);
+    letter-spacing:-0.01em;
+  }
+  .hero h1 i{ font-style:italic; font-weight:500; color:var(--clay); }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:1.12rem;
+    max-width:46ch;
+    color:var(--ink-soft);
+  }
+  .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .hero-stats{
+    margin-top:44px;
+    display:flex;
+    gap:34px;
+    flex-wrap:wrap;
+  }
+  .stat b{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.7rem;
+    color:var(--clay-deep);
+  }
+  .stat span{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  /* ---------- vasija animada (elemento firma) ---------- */
+  .jar-stage{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+  }
+  .jar-stage svg{ width:100%; max-width:340px; height:auto; }
+  #liquid{
+    animation: fillJar 7s ease-in-out infinite;
+    transform-origin:center;
+  }
+  @keyframes fillJar{
+    0%   { transform:translateY(0px); }
+    45%  { transform:translateY(-14px); }
+    55%  { transform:translateY(-14px); }
+    100% { transform:translateY(0px); }
+  }
+  .bubble{
+    animation: rise 4.5s ease-in infinite;
+    opacity:0;
+  }
+  .bubble.b2{ animation-delay:1.1s; }
+  .bubble.b3{ animation-delay:2.4s; }
+  @keyframes rise{
+    0%{ opacity:0; transform:translateY(0); }
+    15%{ opacity:0.8; }
+    85%{ opacity:0.3; }
+    100%{ opacity:0; transform:translateY(-46px); }
+  }
+
+  /* ---------- ticker de granos ---------- */
+  .ticker{
+    background:var(--clay-deep);
+    color:var(--gold-soft);
+    overflow:hidden;
+    padding:13px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .ticker-track{
+    display:flex;
+    width:max-content;
+    animation:scroll 26s linear infinite;
+    gap:0;
+  }
+  .ticker-track span{
+    font-family:var(--font-mono);
+    font-size:0.85rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:0 22px;
+    white-space:nowrap;
+    border-right:1px solid rgba(239,201,107,0.28);
+  }
+  @keyframes scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  /* ---------- secciones generales ---------- */
+  section{ padding:88px 0; }
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2rem, 3.4vw, 2.7rem);
+    color:var(--clay-darker);
+    line-height:1.12;
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+
+  /* ---------- productos ---------- */
+  .productos{ background:var(--bg); }
+  .prod-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+  }
+  .prod-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:28px 26px 26px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .prod-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px -18px rgba(42,21,11,0.4);
+  }
+  .prod-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:var(--accent, var(--gold));
+  }
+  .prod-glyph{
+    width:52px; height:68px;
+    display:flex;
+    align-items:flex-end;
+    margin-bottom:14px;
+  }
+  .prod-glyph svg{ width:100%; height:100%; }
+  .prod-card h3{
+    font-family:var(--font-display);
+    font-size:1.32rem;
+    font-weight:600;
+    color:var(--clay-darker);
+  }
+  .prod-card p{
+    margin-top:10px;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+  }
+  .prod-tag{
+    display:inline-block;
+    margin-top:16px;
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent, var(--clay));
+    border:1px solid var(--accent, var(--clay));
+    border-radius:999px;
+    padding:4px 12px;
+  }
+  .prod-price{
+    display:flex;
+    gap:16px;
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed var(--line);
+  }
+  .prod-price div{ display:flex; flex-direction:column; }
+  .prod-price b{
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    color:var(--clay-darker);
+  }
+  .prod-price span{
+    font-size:0.76rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- proceso ---------- */
+  .proceso{ background:var(--clay-deep); color:var(--bg); }
+  .proceso .section-head h2{ color:var(--gold-soft); }
+  .proceso .section-head p{ color:#E4D5B8; }
+  .proceso .eyebrow{ color:var(--gold-soft); }
+  .proceso .eyebrow::before{ background:var(--gold-soft); }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:18px;
+  }
+  .step{
+    border-top:2px solid rgba(239,201,107,0.4);
+    padding-top:18px;
+  }
+  .step .num{
+    font-family:var(--font-mono);
+    font-size:0.85rem;
+    color:var(--gold-soft);
+    letter-spacing:0.08em;
+  }
+  .step h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.12rem;
+    margin-top:10px;
+    color:var(--paper);
+  }
+  .step p{
+    margin-top:8px;
+    font-size:0.92rem;
+    color:#D9C9A8;
+  }
+
+  /* ---------- nosotros ---------- */
+  .nosotros{ background:var(--bg); }
+  .nosotros .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .nosotros-visual{
+    background:linear-gradient(155deg, var(--river) 0%, #24443f 100%);
+    border-radius:22px;
+    aspect-ratio:4/5;
+    display:flex;
+    align-items:flex-end;
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .nosotros-visual::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.16) 1.6px, transparent 2px);
+    background-size:26px 26px;
+  }
+  .nosotros-visual span{
+    position:relative;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--gold-soft);
+    line-height:1.4;
+  }
+  .nosotros-text h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2rem, 3.2vw, 2.5rem);
+    color:var(--clay-darker);
+    line-height:1.14;
+  }
+  .nosotros-text p{
+    margin-top:18px;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    max-width:56ch;
+  }
+  .nosotros-text p + p{ margin-top:14px; }
+
+  /* ---------- pedidos ---------- */
+  .pedidos{ background:var(--paper); }
+  .pedidos-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:start;
+  }
+  .pedidos-list li{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pedidos-list li:first-child{ padding-top:0; }
+  .pedidos-list b{
+    font-family:var(--font-mono);
+    color:var(--river);
+    font-size:0.85rem;
+  }
+  .pedidos-list h3{
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:1.02rem;
+    color:var(--clay-darker);
+  }
+  .pedidos-list p{
+    margin-top:4px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+
+  .whatsapp-card{
+    background:var(--green);
+    color:var(--paper);
+    border-radius:22px;
+    padding:38px;
+  }
+  .whatsapp-card h3{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    font-weight:600;
+  }
+  .whatsapp-card p{
+    margin-top:12px;
+    color:#DCE7D2;
+    font-size:0.98rem;
+  }
+  .phone-line{
+    margin-top:26px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:var(--font-mono);
+    font-size:1.25rem;
+    letter-spacing:0.02em;
+  }
+  .whatsapp-card .btn-primary{
+    margin-top:26px;
+    background:var(--gold);
+    color:var(--clay-darker);
+  }
+  .whatsapp-card .btn-primary:hover{ background:var(--gold-soft); }
+  .hours{
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid rgba(251,244,222,0.25);
+    font-size:0.9rem;
+    color:#DCE7D2;
+    display:flex;
+    justify-content:space-between;
+  }
+
+  /* ---------- ubicación ---------- */
+  .ubicacion{ background:var(--bg); }
+  .ubicacion-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:48px;
+    align-items:center;
+  }
+  .ubicacion h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2rem, 3.2vw, 2.6rem);
+    color:var(--clay-darker);
+  }
+  .ubicacion-dir{
+    margin-top:16px;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .ubicacion .btn-primary{ margin-top:26px; }
+  .map-frame{
+    position:relative;
+    display:block;
+    aspect-ratio:4/3;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 18px 34px -22px rgba(42,21,11,0.45);
+    text-decoration:none;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .map-frame:hover{
+    transform:translateY(-3px);
+    box-shadow:0 22px 40px -20px rgba(42,21,11,0.5);
+  }
+  .map-frame svg{ width:100%; height:100%; }
+  .map-frame-cta{
+    position:absolute;
+    left:18px; bottom:18px;
+    background:var(--clay-deep);
+    color:var(--paper);
+    font-weight:700;
+    font-size:0.88rem;
+    padding:10px 18px;
+    border-radius:999px;
+    box-shadow:0 10px 20px -10px rgba(0,0,0,0.4);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--clay-darker);
+    color:#D9C9A8;
+    padding:56px 0 30px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(217,201,168,0.16);
+  }
+  .foot-logo{
+    font-family:var(--font-display);
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--paper);
+  }
+  .foot-grid p{ margin-top:14px; font-size:0.92rem; line-height:1.6; max-width:34ch; }
+  .foot-col h4{
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:14px;
+  }
+  .foot-col a, .foot-col li{
+    display:block;
+    font-size:0.92rem;
+    padding:5px 0;
+    text-decoration:none;
+    color:#D9C9A8;
+  }
+  .foot-col a:hover{ color:var(--gold-soft); }
+  .foot-bottom{
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    font-size:0.82rem;
+    color:#9C8B6E;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .prod-grid{ grid-template-columns:repeat(2, 1fr); }
+    .steps{ grid-template-columns:repeat(2, 1fr); }
+    .nosotros .wrap{ grid-template-columns:1fr; }
+    .nosotros-visual{ aspect-ratio:16/9; }
+    .pedidos-grid{ grid-template-columns:1fr; }
+    .ubicacion-grid{ grid-template-columns:1fr; }
+    .map-frame{ order:-1; }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed;
+      top:70px; left:0; right:0;
+      background:var(--bg);
+      flex-direction:column;
+      gap:0;
+      padding:8px 28px 18px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-130%);
+      transition:transform .25s ease;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .nav-links a{ padding:12px 0; border-bottom:1px solid var(--line); }
+    .nav-toggle{ display:flex; }
+    .nav .btn-outline{ display:none; }
+    .hero .wrap{ grid-template-columns:1fr; }
+    .jar-stage{ order:-1; max-width:220px; margin:0 auto 12px; }
+    .hero-stats{ gap:24px; }
+    .prod-grid{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr; }
+    section{ padding:64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">Chicha <em>B&amp;M</em></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#productos">Sabores</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#pedidos">Pedidos</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.facebook.com/share/1Gs8tLaoZv/" target="_blank" rel="noopener" class="btn-icon" aria-label="Chicha B&amp;M en Facebook" title="Chicha B&amp;M en Facebook">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@bm.chicha.artesan?_r=1&amp;_t=ZS-99cGpySNWHh" target="_blank" rel="noopener" class="btn-icon" aria-label="Chicha B&amp;M en TikTok" title="Chicha B&amp;M en TikTok">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82c-1-.87-1.6-2.12-1.6-3.52h-3.16v13.4c0 1.7-1.38 3.08-3.08 3.08a3.08 3.08 0 0 1 0-6.16c.27 0 .53.03.78.1V9.5a6.24 6.24 0 0 0-.78-.05C5.13 9.45 2 12.58 2 16.4S5.13 23.35 8.76 23.35s6.76-3.13 6.76-6.95V9.1a9.2 9.2 0 0 0 5.31 1.68V7.62a5.83 5.83 0 0 1-4.23-1.8Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/chicha.1873191?stkn=MTJocGpreG1yODZpZA==" target="_blank" rel="noopener" class="btn-icon" aria-label="Chicha B&amp;M en Instagram" title="Chicha B&amp;M en Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.2.37.56.21.96.47 1.38.9.42.42.68.82.9 1.38.15.4.32 1.1.37 2.2.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.37 2.2-.21.56-.47.96-.9 1.38-.42.42-.82.68-1.38.9-.4.15-1.1.32-2.2.37-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.2-.37-.56-.21-.96-.47-1.38-.9-.42-.42-.68-.82-.9-1.38-.15-.4-.32-1.1-.37-2.2C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1.1.22-1.8.37-2.2.21-.56.47-.96.9-1.38.42-.42.82-.68 1.38-.9.4-.15 1.1-.32 2.2-.37C9 2.2 9.3 2.2 12 2.2Zm0 1.8c-2.66 0-2.97 0-4.03.06-.9.04-1.38.19-1.71.31-.43.17-.73.37-1.05.69-.32.32-.52.62-.69 1.05-.12.33-.27.81-.31 1.71C4.15 8.03 4.14 8.34 4.14 11s0 2.97.06 4.03c.04.9.19 1.38.31 1.71.17.43.37.73.69 1.05.32.32.62.52 1.05.69.33.12.81.27 1.71.31 1.06.06 1.37.06 4.03.06s2.97 0 4.03-.06c.9-.04 1.38-.19 1.71-.31.43-.17.73-.37 1.05-.69.32-.32.52-.62.69-1.05.12-.33.27-.81.31-1.71.06-1.06.06-1.37.06-4.03s0-2.97-.06-4.03c-.04-.9-.19-1.38-.31-1.71a2.84 2.84 0 0 0-.69-1.05 2.84 2.84 0 0 0-1.05-.69c-.33-.12-.81-.27-1.71-.31C14.97 4 14.66 4 12 4Zm0 3.38a4.62 4.62 0 1 1 0 9.24 4.62 4.62 0 0 1 0-9.24Zm0 1.8a2.82 2.82 0 1 0 0 5.64 2.82 2.82 0 0 0 0-5.64Zm4.8-1.98a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0Z"/></svg>
+      </a>
+      <a href="#pedidos" class="btn btn-outline">Ver horarios</a>
+      <a href="https://wa.me/59167353140" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Trinidad · Beni · Bolivia</div>
+        <h1>Chicha de patio,<br>hecha como <i>siempre</i><br>se hizo.</h1>
+        <p class="lede">En Chicha B&amp;M cocemos, fermentamos y colamos a mano el maíz, el maní, el arroz, el trigo y el chivé de cada cántaro. Sin apuros, con el calor de Trinidad marcando el tiempo.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/59167353140" target="_blank" rel="noopener" class="btn btn-primary">Pedir por WhatsApp</a>
+          <a href="#productos" class="btn btn-ghost">Ver los sabores ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>5</b><span>Sabores de la casa</span></div>
+          <div class="stat"><b>100%</b><span>Grano local</span></div>
+          <div class="stat"><b>+591 67353140</b><span>Pedidos y consultas</span></div>
+        </div>
+      </div>
+
+      <div class="jar-stage" aria-hidden="true">
+        <svg viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="150" cy="340" rx="70" ry="12" fill="#2A150B" opacity="0.18"/>
+          <path d="M110 40 C110 24 190 24 190 40 L198 90 C232 130 240 200 220 260 C205 305 195 335 150 335 C105 335 95 305 80 260 C60 200 68 130 102 90 Z"
+                fill="#8A4520" stroke="#3F2010" stroke-width="3"/>
+          <path d="M108 42 C108 55 192 55 192 42" stroke="#3F2010" stroke-width="3" fill="none"/>
+          <clipPath id="jarClip">
+            <path d="M110 40 C110 24 190 24 190 40 L198 90 C232 130 240 200 220 260 C205 305 195 335 150 335 C105 335 95 305 80 260 C60 200 68 130 102 90 Z"/>
+          </clipPath>
+          <g clip-path="url(#jarClip)">
+            <g id="liquid">
+              <rect x="50" y="150" width="210" height="220" fill="#D9A62E"/>
+              <path d="M50 150 Q150 138 260 150 L260 160 Q150 148 50 160 Z" fill="#EFC96B"/>
+            </g>
+          </g>
+          <circle class="bubble b1" cx="140" cy="230" r="4" fill="#FBF4DE"/>
+          <circle class="bubble b2" cx="165" cy="250" r="3" fill="#FBF4DE"/>
+          <circle class="bubble b3" cx="150" cy="270" r="3.5" fill="#FBF4DE"/>
+          <path d="M100 92 C102 78 198 78 200 92" stroke="#3F2010" stroke-width="3" fill="none" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" role="presentation">
+    <div class="ticker-track">
+      <span>MAÍZ</span><span>MANÍ</span><span>ARROZ</span><span>TRIGO</span><span>CHIVÉ</span>
+      <span>MAÍZ</span><span>MANÍ</span><span>ARROZ</span><span>TRIGO</span><span>CHIVÉ</span>
+      <span>MAÍZ</span><span>MANÍ</span><span>ARROZ</span><span>TRIGO</span><span>CHIVÉ</span>
+      <span>MAÍZ</span><span>MANÍ</span><span>ARROZ</span><span>TRIGO</span><span>CHIVÉ</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTOS -->
+  <section class="productos" id="productos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">El cántaro de hoy</div>
+        <h2>Cinco granos, cinco maneras de fermentar el calor de Trinidad</h2>
+        <p>Cada sabor se cuece por separado y reposa su propio tiempo. Preguntanos por disponibilidad del día antes de pedir.</p>
+      </div>
+
+      <div class="prod-grid">
+        <div class="prod-card reveal" style="--accent:#D9A62E">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bMz"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bMz)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Chicha de maíz</h3>
+          <p>La de siempre. Maíz molido, cocido y fermentado en cántaro de barro: dulce, espesa y bien fría.</p>
+          <span class="prod-tag">Clásica de la casa</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" style="--accent:#8A4520">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bMn"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bMn)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Chicha de maní</h3>
+          <p>Maní tostado y molido a piedra, con una textura cremosa que se sirve bien helada.</p>
+          <span class="prod-tag">Cremosa</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" style="--accent:#33625F">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bAr"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bAr)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Chicha de arroz</h3>
+          <p>Arroz cocido y colado fino, la más suave de todas. Ideal para los días de más calor.</p>
+          <span class="prod-tag">Ligera</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" style="--accent:#B8862F">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bTr"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bTr)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Chicha de trigo</h3>
+          <p>Trigo partido, cocido lento hasta sacarle ese fondo tostado que la distingue.</p>
+          <span class="prod-tag">Tostada</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" style="--accent:#364F27">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bCh"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bCh)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Chicha de chivé</h3>
+          <p>Con harina de yuca fermentada, típica del Beni. Sabor agridulce que no se encuentra en todos lados.</p>
+          <span class="prod-tag">De la región</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" style="--accent:#7C3B18">
+          <div class="prod-glyph">
+            <svg viewBox="0 0 64 84" xmlns="http://www.w3.org/2000/svg">
+              <clipPath id="bMx"><path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z"/></clipPath>
+              <g clip-path="url(#bMx)"><rect x="0" y="34" width="64" height="50" fill="var(--accent)"/><rect x="0" y="34" width="64" height="4" fill="#fff" opacity="0.35"/></g>
+              <path d="M24,4 h16 v9 c7,4.5 11,11 11,19 v43 a5,5 0 0 1 -5,5 h-28 a5,5 0 0 1 -5,-5 v-43 c0,-8 4,-14.5 11,-19 z" fill="none" stroke="var(--clay-deep)" stroke-width="2.2"/>
+              <rect x="26" y="1" width="12" height="5" rx="1.5" fill="var(--clay-deep)"/>
+            </svg>
+          </div>
+          <h3>Mezcla del mes</h3>
+          <p>Un sabor rotativo según el grano de temporada. Preguntanos por WhatsApp cuál toca esta semana.</p>
+          <span class="prod-tag">Sorpresa</span>
+          <div class="prod-price">
+            <div><b>Bs 10</b><span>2 litros</span></div>
+            <div><b>Bs 14</b><span>3 litros</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso" id="proceso">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">De la olla al cántaro</div>
+        <h2>Así se hace cada tanda</h2>
+        <p>Cinco pasos, siempre en el mismo orden, porque el grano y la fermentación no aceptan atajos.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">01</div>
+          <h3>Selección del grano</h3>
+          <p>Maíz, maní, arroz, trigo o chivé, elegido cada mañana según lo que esté en su punto.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">02</div>
+          <h3>Cocción lenta</h3>
+          <p>Se cuece a fuego bajo hasta soltar todo el almidón y el aroma propio de cada grano.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">03</div>
+          <h3>Fermentación</h3>
+          <p>Reposa en cántaro de barro el tiempo justo para llegar al punto de sabor de la casa.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">04</div>
+          <h3>Colado y frío</h3>
+          <p>Se cuela fino y se enfría bien, porque en Trinidad la chicha se toma helada o no se toma.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">05</div>
+          <h3>Envasado</h3>
+          <p>Se sirve en botella plástica de 2 o 3 litros, lista para llevar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="nosotros" id="nosotros">
+    <div class="wrap">
+      <div class="nosotros-visual reveal">
+        <span>«El chivé se prepara distinto a todo lo demás, y ese es justamente el sabor que nadie más tiene.»</span>
+      </div>
+      <div class="nosotros-text reveal">
+        <div class="eyebrow">Sobre Chicha B&amp;M</div>
+        <h2>Un emprendimiento de patio, pensado para el calor del Beni</h2>
+        <p>Chicha B&amp;M nació de la receta de siempre: la que se cocina desde temprano para que esté lista cuando aprieta el calor de Trinidad. Trabajamos con grano de la zona y cántaros de barro, sin apurar la fermentación.</p>
+        <p>No hacemos todos los sabores todos los días: preferimos que cada cántaro salga en su punto antes que tener de todo a medias. Por eso conviene preguntar disponibilidad antes de pasar a recoger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDOS -->
+  <section class="pedidos" id="pedidos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Hacer un pedido</div>
+        <h2>Todo se coordina por WhatsApp</h2>
+      </div>
+
+      <div class="pedidos-grid">
+        <ul class="pedidos-list reveal">
+          <li>
+            <b>01</b>
+            <div>
+              <h3>Escribinos al +591 67353140</h3>
+              <p>Contanos qué sabor buscás y para cuándo lo necesitás.</p>
+            </div>
+          </li>
+          <li>
+            <b>02</b>
+            <div>
+              <h3>Te confirmamos disponibilidad</h3>
+              <p>Te decimos qué cántaros están listos ese día y la cantidad disponible.</p>
+            </div>
+          </li>
+          <li>
+            <b>03</b>
+            <div>
+              <h3>Coordinamos recojo o entrega</h3>
+              <p>Dentro de Trinidad según zona y horario del pedido.</p>
+            </div>
+          </li>
+          <li>
+            <b>04</b>
+            <div>
+              <h3>Recibís tu chicha bien fresca</h3>
+              <p>Servida y lista para tomar apenas llega.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="whatsapp-card reveal">
+          <h3>Escribinos ahora</h3>
+          <p>Respondemos los pedidos por WhatsApp, de lunes a sábado.</p>
+          <div class="phone-line">
+            <span>+591 67353140</span>
+          </div>
+          <a href="https://wa.me/59167353140" target="_blank" rel="noopener" class="btn btn-primary">Abrir WhatsApp</a>
+          <div class="hours">
+            <span>Lun – Sáb</span>
+            <span>9:00 – 19:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="ubicacion" id="ubicacion">
+    <div class="wrap">
+      <div class="ubicacion-grid">
+        <div class="reveal">
+          <div class="eyebrow">Dónde encontrarnos</div>
+          <h2>Trinidad, Beni</h2>
+          <p class="ubicacion-dir">Av. Antonio Vaca Díez, entre Ejército y Cobija<br>Beni-Cercado, Trinidad</p>
+          <a href="https://maps.app.goo.gl/NBkX3zFvW13hc1k2A" target="_blank" rel="noopener" class="btn btn-primary">Ver en Google Maps</a>
+        </div>
+        <a class="map-frame reveal" href="https://maps.app.goo.gl/NBkX3zFvW13hc1k2A" target="_blank" rel="noopener" aria-label="Abrir ubicación en Google Maps">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#EFE3BE"/>
+            <g stroke="#D9C9A0" stroke-width="1.4">
+              <line x1="0" y1="60" x2="400" y2="60"/>
+              <line x1="0" y1="150" x2="400" y2="150"/>
+              <line x1="0" y1="230" x2="400" y2="230"/>
+              <line x1="90" y1="0" x2="90" y2="300"/>
+              <line x1="230" y1="0" x2="230" y2="300"/>
+              <line x1="330" y1="0" x2="330" y2="300"/>
+            </g>
+            <path d="M0 150 C90 130 150 170 230 150 C300 134 350 160 400 150" stroke="#C9B183" stroke-width="6" fill="none" opacity="0.7"/>
+            <path d="M230 0 C210 90 250 190 200 300" stroke="#C9B183" stroke-width="6" fill="none" opacity="0.7"/>
+            <circle cx="200" cy="140" r="70" fill="#33625F" opacity="0.14"/>
+            <g transform="translate(200,118)">
+              <path d="M0,-38 C21,-38 36,-22 36,-2 C36,24 0,52 0,52 C0,52 -36,24 -36,-2 C-36,-22 -21,-38 0,-38 Z" fill="#7C3B18" stroke="#3F2010" stroke-width="2.5"/>
+              <circle cx="0" cy="-4" r="13" fill="#FBF4DE"/>
+            </g>
+            <ellipse cx="200" cy="192" rx="16" ry="4" fill="#3F2010" opacity="0.25"/>
+          </svg>
+          <span class="map-frame-cta">Ver en Google Maps ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Chicha B&amp;M</div>
+        <p>Chicha artesanal de maíz, maní, arroz, trigo y chivé, hecha a mano en Trinidad, Beni.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <a href="tel:+59167353140">+591 67353140</a>
+        <a href="https://wa.me/59167353140" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a href="https://www.facebook.com/share/1Gs8tLaoZv/" target="_blank" rel="noopener">Síguenos en Facebook</a>
+        <a href="https://www.tiktok.com/@bm.chicha.artesan?_r=1&amp;_t=ZS-99cGpySNWHh" target="_blank" rel="noopener">Síguenos en TikTok</a>
+        <a href="https://www.instagram.com/chicha.1873191?stkn=MTJocGpreG1yODZpZA==" target="_blank" rel="noopener">Síguenos en Instagram</a>
+        <li>Trinidad, Beni · Bolivia</li>
+      </div>
+      <div class="foot-col">
+        <h4>Explorar</h4>
+        <a href="#productos">Sabores</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#pedidos">Pedidos</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Chicha B&amp;M — Trinidad, Beni</span>
+      <span>Hecha a mano, pedida por WhatsApp</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
